@@ -1,0 +1,180 @@
+/* Reseta margens, padding, e usa a fonte Poppins */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Cor de fundo neutra */
+body {
+  background-color: #dceefc; /* Azul suave */
+  color: #333;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container principal */
+.container {
+  display: flex;
+  width: 850px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Seção da esquerda (imagem sem fundo branco) */
+.left-section {
+  flex: 1;
+  background: #d0e3f0; /* Azul claro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  position: relative;
+}
+
+.left-section::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px 0 0 12px;
+}
+
+.left-section img {
+  width: 80%;
+}
+
+/* Seção da direita */
+.right-section {
+  flex: 1;
+  padding: 40px;
+  background-color: #ffffff;
+}
+
+/* Título */
+h1 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #1e2a3a; /* Azul escuro */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Inputs */
+input {
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background-color: #f2f2f2; /* Fundo mais suave para contraste */
+  color: #333; /* Cor do texto mais escura para melhor legibilidade */
+  transition: all 0.7s ease;
+}
+
+input:focus {
+  border-color: #4c9af7;
+  box-shadow: 0 0 5px rgba(76, 154, 247, 0.2);
+}
+
+/* Botão de adicionar */
+button.add-button {
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: #4c9af7; /* Azul suave */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+button.add-button:hover {
+  background: #386bcd; /* Azul mais escuro para hover */
+}
+
+/* Lista de pessoas */
+.pessoas-list {
+  margin-top: 20px;
+  max-height: 200px; /* Define uma altura máxima */
+  overflow-y: auto; /* Permite rolagem vertical */
+  background-color: rgba(255, 255, 255, 0.9); /* Fundo levemente transparente */
+  border-radius: 8px;
+  padding-right: 10px; /* Espaço para a barra de rolagem */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: background-color 0.3s ease; /* Transição suave */
+}
+
+
+/* Quando a lista está sendo rolada */
+.pessoas-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pessoas-list::-webkit-scrollbar-thumb {
+  background-color: #4c9af7; /* Azul suave para a barra de rolagem */
+  border-radius: 10px;
+}
+
+.pessoas-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.2); /* Fundo suave */
+}
+
+/* Itens da lista de pessoas */
+.pessoa-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+/* Botão de deletar */
+.delete-button {
+  background: none;
+  border: none;
+  color: #f44336;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.delete-button:hover {
+  color: #e53935;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .left-section {
+    display: none; /* Esconde a ilustração em telas menores */
+  }
+
+  .right-section {
+    width: 100%;
+  }
+}
